@@ -24,7 +24,7 @@ import javax.swing.border.TitledBorder;
 
 import org.jnetpcap.PcapIf;
 
-public class StopWaitDlg extends JFrame implements BaseLayer {
+public class ChatFileDlg extends JFrame implements BaseLayer {
 
 	public int nUpperLayerCount = 0;
 	public String pLayerName = null;
@@ -60,11 +60,11 @@ public class StopWaitDlg extends JFrame implements BaseLayer {
 		m_LayerMgr.AddLayer(new NILayer("NI"));
 		m_LayerMgr.AddLayer(new EthernetLayer("Ethernet"));
 		m_LayerMgr.AddLayer(new ChatAppLayer("ChatApp"));
-		m_LayerMgr.AddLayer(new StopWaitDlg("GUI"));
+		m_LayerMgr.AddLayer(new ChatFileDlg("GUI"));
 		m_LayerMgr.ConnectLayers(" NI ( *Ethernet ( *ChatApp ( *GUI ) )");
 	}
 
-	public StopWaitDlg(String pName) {
+	public ChatFileDlg(String pName) {
 		pLayerName = pName;
 
 		setTitle("Stop & Wait Protocol");
